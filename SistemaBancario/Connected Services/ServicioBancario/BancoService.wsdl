@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="codigoBanco">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="x" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="codigoBancoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoBancoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="codigoSucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="x" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="codigoSucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoSucursalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="numeroCuenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="x" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="numeroCuentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numeroCuentaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contraseña">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contraseñaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contraseñaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="orden">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ordenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ordenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="codigoBancoSoapIn">
+    <wsdl:part name="parameters" element="tns:codigoBanco" />
+  </wsdl:message>
+  <wsdl:message name="codigoBancoSoapOut">
+    <wsdl:part name="parameters" element="tns:codigoBancoResponse" />
+  </wsdl:message>
+  <wsdl:message name="codigoSucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:codigoSucursal" />
+  </wsdl:message>
+  <wsdl:message name="codigoSucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:codigoSucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="numeroCuentaSoapIn">
+    <wsdl:part name="parameters" element="tns:numeroCuenta" />
+  </wsdl:message>
+  <wsdl:message name="numeroCuentaSoapOut">
+    <wsdl:part name="parameters" element="tns:numeroCuentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="contraseñaSoapIn">
+    <wsdl:part name="parameters" element="tns:contraseña" />
+  </wsdl:message>
+  <wsdl:message name="contraseñaSoapOut">
+    <wsdl:part name="parameters" element="tns:contraseñaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ordenSoapIn">
+    <wsdl:part name="parameters" element="tns:orden" />
+  </wsdl:message>
+  <wsdl:message name="ordenSoapOut">
+    <wsdl:part name="parameters" element="tns:ordenResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BancoServiceSoap">
+    <wsdl:operation name="codigoBanco">
+      <wsdl:input message="tns:codigoBancoSoapIn" />
+      <wsdl:output message="tns:codigoBancoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="codigoSucursal">
+      <wsdl:input message="tns:codigoSucursalSoapIn" />
+      <wsdl:output message="tns:codigoSucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="numeroCuenta">
+      <wsdl:input message="tns:numeroCuentaSoapIn" />
+      <wsdl:output message="tns:numeroCuentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contraseña">
+      <wsdl:input message="tns:contraseñaSoapIn" />
+      <wsdl:output message="tns:contraseñaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="orden">
+      <wsdl:input message="tns:ordenSoapIn" />
+      <wsdl:output message="tns:ordenSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BancoServiceSoap" type="tns:BancoServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="codigoBanco">
+      <soap:operation soapAction="http://tempuri.org/codigoBanco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="codigoSucursal">
+      <soap:operation soapAction="http://tempuri.org/codigoSucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numeroCuenta">
+      <soap:operation soapAction="http://tempuri.org/numeroCuenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contraseña">
+      <soap:operation soapAction="http://tempuri.org/contraseña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orden">
+      <soap:operation soapAction="http://tempuri.org/orden" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BancoServiceSoap12" type="tns:BancoServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="codigoBanco">
+      <soap12:operation soapAction="http://tempuri.org/codigoBanco" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="codigoSucursal">
+      <soap12:operation soapAction="http://tempuri.org/codigoSucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="numeroCuenta">
+      <soap12:operation soapAction="http://tempuri.org/numeroCuenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contraseña">
+      <soap12:operation soapAction="http://tempuri.org/contraseña" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orden">
+      <soap12:operation soapAction="http://tempuri.org/orden" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BancoService">
+    <wsdl:port name="BancoServiceSoap" binding="tns:BancoServiceSoap">
+      <soap:address location="https://localhost:44318/Service/BancoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BancoServiceSoap12" binding="tns:BancoServiceSoap12">
+      <soap12:address location="https://localhost:44318/Service/BancoService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

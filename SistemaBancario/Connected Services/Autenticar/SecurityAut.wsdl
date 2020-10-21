@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="setAcumulador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acumulador" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setAcumuladorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAcumulador">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAcumuladorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAcumuladorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Autenticar">
+        <s:complexType />
+      </s:element>
+      <s:element name="AutenticarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutenticarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthUser" type="tns:AuthUser" />
+      <s:complexType name="AuthUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id_Usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreCuenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contraseña" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumTelefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Saldo" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="Depocitar">
+        <s:complexType />
+      </s:element>
+      <s:element name="DepocitarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DepocitarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Retirar">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetirarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetirarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registrar">
+        <s:complexType />
+      </s:element>
+      <s:element name="RegistrarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verSaldo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="b" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verSaldoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="verSaldoResult" type="tns:ArrayOfAuthUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAuthUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AuthUser" nillable="true" type="tns:AuthUser" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="setAcumuladorSoapIn">
+    <wsdl:part name="parameters" element="tns:setAcumulador" />
+  </wsdl:message>
+  <wsdl:message name="setAcumuladorSoapOut">
+    <wsdl:part name="parameters" element="tns:setAcumuladorResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAcumuladorSoapIn">
+    <wsdl:part name="parameters" element="tns:getAcumulador" />
+  </wsdl:message>
+  <wsdl:message name="getAcumuladorSoapOut">
+    <wsdl:part name="parameters" element="tns:getAcumuladorResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarSoapIn">
+    <wsdl:part name="parameters" element="tns:Autenticar" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarSoapOut">
+    <wsdl:part name="parameters" element="tns:AutenticarResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarAuthUser">
+    <wsdl:part name="AuthUser" element="tns:AuthUser" />
+  </wsdl:message>
+  <wsdl:message name="DepocitarSoapIn">
+    <wsdl:part name="parameters" element="tns:Depocitar" />
+  </wsdl:message>
+  <wsdl:message name="DepocitarSoapOut">
+    <wsdl:part name="parameters" element="tns:DepocitarResponse" />
+  </wsdl:message>
+  <wsdl:message name="DepocitarAuthUser">
+    <wsdl:part name="AuthUser" element="tns:AuthUser" />
+  </wsdl:message>
+  <wsdl:message name="RetirarSoapIn">
+    <wsdl:part name="parameters" element="tns:Retirar" />
+  </wsdl:message>
+  <wsdl:message name="RetirarSoapOut">
+    <wsdl:part name="parameters" element="tns:RetirarResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetirarAuthUser">
+    <wsdl:part name="AuthUser" element="tns:AuthUser" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarSoapIn">
+    <wsdl:part name="parameters" element="tns:Registrar" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarAuthUser">
+    <wsdl:part name="AuthUser" element="tns:AuthUser" />
+  </wsdl:message>
+  <wsdl:message name="verSaldoSoapIn">
+    <wsdl:part name="parameters" element="tns:verSaldo" />
+  </wsdl:message>
+  <wsdl:message name="verSaldoSoapOut">
+    <wsdl:part name="parameters" element="tns:verSaldoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SecurityAutSoap">
+    <wsdl:operation name="setAcumulador">
+      <wsdl:input message="tns:setAcumuladorSoapIn" />
+      <wsdl:output message="tns:setAcumuladorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAcumulador">
+      <wsdl:input message="tns:getAcumuladorSoapIn" />
+      <wsdl:output message="tns:getAcumuladorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <wsdl:input message="tns:AutenticarSoapIn" />
+      <wsdl:output message="tns:AutenticarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Depocitar">
+      <wsdl:input message="tns:DepocitarSoapIn" />
+      <wsdl:output message="tns:DepocitarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Retirar">
+      <wsdl:input message="tns:RetirarSoapIn" />
+      <wsdl:output message="tns:RetirarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registrar">
+      <wsdl:input message="tns:RegistrarSoapIn" />
+      <wsdl:output message="tns:RegistrarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verSaldo">
+      <wsdl:input message="tns:verSaldoSoapIn" />
+      <wsdl:output message="tns:verSaldoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SecurityAutSoap" type="tns:SecurityAutSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setAcumulador">
+      <soap:operation soapAction="http://tempuri.org/setAcumulador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAcumulador">
+      <soap:operation soapAction="http://tempuri.org/getAcumulador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <soap:operation soapAction="http://tempuri.org/Autenticar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AutenticarAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Depocitar">
+      <soap:operation soapAction="http://tempuri.org/Depocitar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DepocitarAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retirar">
+      <soap:operation soapAction="http://tempuri.org/Retirar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RetirarAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registrar">
+      <soap:operation soapAction="http://tempuri.org/Registrar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RegistrarAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verSaldo">
+      <soap:operation soapAction="http://tempuri.org/verSaldo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SecurityAutSoap12" type="tns:SecurityAutSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setAcumulador">
+      <soap12:operation soapAction="http://tempuri.org/setAcumulador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAcumulador">
+      <soap12:operation soapAction="http://tempuri.org/getAcumulador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <soap12:operation soapAction="http://tempuri.org/Autenticar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AutenticarAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Depocitar">
+      <soap12:operation soapAction="http://tempuri.org/Depocitar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DepocitarAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retirar">
+      <soap12:operation soapAction="http://tempuri.org/Retirar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RetirarAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registrar">
+      <soap12:operation soapAction="http://tempuri.org/Registrar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RegistrarAuthUser" part="AuthUser" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verSaldo">
+      <soap12:operation soapAction="http://tempuri.org/verSaldo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecurityAut">
+    <wsdl:port name="SecurityAutSoap" binding="tns:SecurityAutSoap">
+      <soap:address location="https://localhost:44389/Operaciones/SecurityAut.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SecurityAutSoap12" binding="tns:SecurityAutSoap12">
+      <soap12:address location="https://localhost:44389/Operaciones/SecurityAut.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
